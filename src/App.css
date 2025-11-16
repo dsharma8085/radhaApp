@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%), 
-              url('https://images.pexels.com/photos/9439891/pexels-photo-9439891.jpeg?w=1600&h=900&fit=crop') center/cover no-repeat fixed;
+              url('./assets/Radha-Krishna-HD-photo.webp') center/cover no-repeat fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,8 +111,66 @@
   margin-top: 2rem;
 }
 
+.floating-radha {
+  position: absolute;
+  font-size: 2em;
+  font-weight: bold;
+  pointer-events: none;
+  opacity: 0.85;
+  animation: radha-float 1.2s ease-out forwards;
+  z-index: 20;
+  user-select: none;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+@keyframes radha-float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(-40px) scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-80px) scale(1.2);
+    opacity: 0;
+  }
+}
+
 #root {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 600px) {
+  .radha-title {
+    font-size: 2em;
+    margin-bottom: 1rem;
+  }
+  .radha-content {
+    padding: 1rem;
+  }
+  .counter-card {
+    padding: 1.5rem 0.5rem;
+    max-width: 95vw;
+  }
+  .counter-button {
+    font-size: 1em;
+    min-width: 120px;
+    padding: 0.8em 1em;
+    margin: 0 5px 1rem 5px;
+  }
+  .reset-button {
+    font-size: 0.9em;
+    padding: 0.6em 1em;
+  }
+  .devotion-text {
+    font-size: 1em;
+    margin-top: 1rem;
+  }
+  .floating-radha {
+    font-size: 1.2em;
+  }
 }

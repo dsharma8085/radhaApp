@@ -48,6 +48,10 @@ h1 {
   line-height: 1.1;
 }
 
+.radha-title1{
+  color: limegreen;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -77,5 +81,23 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 600px) {
+  html, body, #root {
+    min-width: 100vw;
+    min-height: 100vh;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .radha-title1 {
+    font-size: 1.2em;
+  }
+  button {
+    font-size: 0.95em;
+    padding: 0.5em 0.8em;
   }
 }
