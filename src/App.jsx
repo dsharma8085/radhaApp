@@ -1,8 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import './App.css'
-
-// Radha music audio (royalty free, short sample)
-const RADHA_MUSIC_URL = 'https://www.jiosaavn.com/album/radhe-radhe/-AUYWeZEoG0_';
+import RADHA_MUSIC_URL from './audio/radhe.mp3'
 
 function getRandomColor() {
   const colors = [
@@ -54,6 +52,13 @@ function App() {
     sessionStorage.setItem('radhaCount', 0);
   };
 
+  const handlePlayAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+    }
+  };
+
   useEffect(() => {
     // Play audio when app loads
     if (audioRef.current) {
@@ -61,8 +66,15 @@ function App() {
     }
   }, []);
 
+  // Make the whole app clickable except reset button
+  const handleContainerClick = (e) => {
+    // Prevent count if reset button is clicked
+    if (e.target.classList.contains('reset-button')) return;
+    handleCount();
+  };
+
   return (
-    <div className="radha-container">
+    <div className="radha-container" onClick={handleContainerClick}>
       <audio ref={audioRef} src={RADHA_MUSIC_URL} preload="auto" />
       {floatingTexts.map((text) => (
         <span
@@ -79,6 +91,9 @@ function App() {
       ))}
       <div className="radha-content">
         <h1 className="radha-title">🙏 राधे राधे 🙏</h1>
+        <button onClick={handlePlayAudio} className="counter-button" style={{marginBottom: '1rem'}}>
+          🎵 राधा भजन सुनें
+        </button>
         <p className='radha-title1'>राधा नाम जाप से भगवान कृष्ण की कृपा मिलती है, मन को शांति मिलती है और आर्थिक समृद्धि आती है। ब्रह्म मुहूर्त में जाप करना शुभ माना जाता है, और मंत्रों के अलावा राधा रानी के 28 नामों का जाप करना भी लाभदायक होता है।</p>
         <div className="counter-card">
           <button 
