@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import './App.css'
 
 // Radha music audio (royalty free, short sample)
-const RADHA_MUSIC_URL = 'https://cdn.pixabay.com/audio/2022/10/16/audio_12b6b2b1b7.mp3';
+const RADHA_MUSIC_URL = 'https://www.jiosaavn.com/album/radhe-radhe/-AUYWeZEoG0_';
 
 function getRandomColor() {
   const colors = [
@@ -53,6 +53,13 @@ function App() {
     setCount(0);
     sessionStorage.setItem('radhaCount', 0);
   };
+
+  useEffect(() => {
+    // Play audio when app loads
+    if (audioRef.current) {
+      audioRef.current.play().catch(() => {});
+    }
+  }, []);
 
   return (
     <div className="radha-container">
