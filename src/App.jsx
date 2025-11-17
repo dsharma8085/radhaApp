@@ -82,9 +82,10 @@ function App() {
 
   // Make the whole app clickable except reset button
   const handleContainerClick = (e) => {
-    // Prevent count if reset or play/pause button is clicked
+    // Prevent count if reset, play/pause button, or counter circle is clicked
     if (
       e.target.classList.contains('reset-button') ||
+      e.target.classList.contains('counter-circle') ||
       (e.target.classList.contains('counter-button') && e.target.textContent.includes('भजन'))
     ) return;
     handleCount();
