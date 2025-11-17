@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%), 
-              url('./assets/Radha-Krishna-HD-photo.webp') center/cover no-repeat fixed;
+              url('./assets/wp15781811.jpg') center/cover no-repeat fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,6 +138,14 @@
   }
 }
 
+.counter-circle {
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.4s;
+}
+.counter-circle.animate {
+  transform: scale(1.15) rotate(-8deg);
+  box-shadow: 0 8px 32px 0 rgba(102,126,234,0.6);
+}
+
 #root {
   width: 100%;
   margin: 0;
@@ -172,5 +180,10 @@
   }
   .floating-radha {
     font-size: 1.2em;
+  }
+  .counter-circle {
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 1.5em !important;
   }
 }
