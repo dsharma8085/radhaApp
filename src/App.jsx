@@ -3,6 +3,15 @@ import './App.css'
 import RADHA_MUSIC_URL from './audio/radhe.mp3'
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Wallpaper from './components/Wallpaper';
+import Quotes from './components/Quotes';
+import Festivals from './components/Festivals';
+import Aarti from './components/Aarti';
+import Mantra from './components/Mantra';
+import Tools from './components/Tools';
+import About from './components/About';
+import Contact from './components/Contact';
+import Privacy from './components/Privacy';
 
 function getRandomColor() {
   const colors = [
@@ -132,15 +141,15 @@ function App() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    width: '120px',
-                    height: '120px',
+                    width: '200px',
+                    height: '200px',
                     borderRadius: '50%',
                     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                    boxShadow: '0 4px 15px rgba(102,126,234,0.4)',
+                    boxShadow: '0 4px 30px rgba(102,126,234,0.4)',
                     cursor: 'pointer',
                     position: 'relative',
                     transition: 'transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s',
-                    fontSize: '2.5em',
+                    fontSize: '4em',
                     color: counterColor,
                     fontWeight: 'bold',
                     userSelect: 'none',
@@ -148,26 +157,27 @@ function App() {
                 >
                   {count}
                 </div>
-                <button 
+
+              </div>
+                              <button 
                   onClick={handleReset}
                   className="reset-button"
                   style={{marginTop: '1rem'}}
                 >
                   पुनः शुरुआत
                 </button>
-              </div>
             </div>
           </div>
         } />
-        <Route path="/about" element={<DummyPage title="About Us">Radha Counter is a devotional app dedicated to spreading the love and teachings of Radha-Krishna. Count your chants, enjoy wallpapers, quotes, and more!</DummyPage>} />
-        <Route path="/contact" element={<DummyPage title="Contact Us">For feedback, suggestions, or support, email us at radha@devotion.com or use our contact form. Jai Radhe!</DummyPage>} />
-        <Route path="/privacy" element={<DummyPage title="Privacy Policy">We respect your privacy. This app does not collect personal data. All chant counts are stored locally. Jai Radha Krishna!</DummyPage>} />
-        <Route path="/tools" element={<DummyPage title="Tools">Explore Radha-themed tools: mantra counter, festival reminders, and more coming soon!</DummyPage>} />
-        <Route path="/wallpaper" element={<DummyPage title="Wallpapers">Download beautiful Radha Krishna wallpapers to inspire your devotion.</DummyPage>} />
-        <Route path="/quotes" element={<DummyPage title="Quotes">Read and share Radha Krishna quotes to uplift your spirit.</DummyPage>} />
-        <Route path="/festivals" element={<DummyPage title="Festival List">See upcoming Radha-Krishna festivals and events. Celebrate with devotion!</DummyPage>} />
-        <Route path="/aarti" element={<DummyPage title="Radha Aarti">Recite or listen to Radha Aarti. Jai Radhe!</DummyPage>} />
-        <Route path="/mantra" element={<DummyPage title="Krishna Mantra">Chant Krishna mantras for peace and prosperity.</DummyPage>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/tools" element={<Tools />} />
+        <Route path="/wallpaper" element={<Wallpaper />} />
+        <Route path="/quotes" element={<Quotes />} />
+        <Route path="/festivals" element={<Festivals />} />
+        <Route path="/aarti" element={<Aarti />} />
+        <Route path="/mantra" element={<Mantra />} />
       </Routes>
     </div>
   )
