@@ -1,3 +1,24 @@
+/* Mobile top-right counter display */
+.mobile-count-display {
+  display: none;
+  position: fixed;
+  top: 12px;
+  right: 18px;
+  background: linear-gradient(135deg, #ff69b4 0%, #ffd700 100%);
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(255,105,180,0.15);
+  z-index: 999;
+}
+
+@media (max-width: 600px) {
+  .mobile-count-display {
+    display: block;
+  }
+}
 .radha-container {
   width: 100%;
   min-height: 100vh;

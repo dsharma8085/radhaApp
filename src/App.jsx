@@ -110,6 +110,8 @@ function App() {
   return (
     <div>
       <Navbar />
+      {/* Mobile top-right counter display */}
+      <div className="mobile-count-display">{count}</div>
       <Routes>
         <Route path="/" element={
           <div className="radha-container" onClick={handleContainerClick}>
